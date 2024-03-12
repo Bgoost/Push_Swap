@@ -6,7 +6,7 @@
 /*   By: crmanzan <crmanzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:38:43 by crmanzan          #+#    #+#             */
-/*   Updated: 2024/03/11 19:10:28 by crmanzan         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:44:33 by crmanzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main(int argc, char *argv[])
 {
-    t_node  *a;
-    t_node  *b;
-    a = NULL;
-    b = NULL;
+    t_node  *stack_a;
+    t_node  *stack_b;
+    stack_a = NULL;
+    stack_b = NULL;
     
     int i;
     
