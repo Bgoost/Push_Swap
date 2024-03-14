@@ -30,5 +30,11 @@ int main(int argc, char *argv[])
         write(2, "Error", 5);
         exit(0);    
     }
-    printf("%s", argv[1]);
+    init_stack_a(&stack_a, argv + 1);
+    if(stack_sorted(stack_a))
+    {
+        ft_printf("ok");
+    }
+    free(&stack_a);
+    ft_printf("\n", argv[1]);
 }
