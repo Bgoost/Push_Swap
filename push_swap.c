@@ -31,10 +31,12 @@ int main(int argc, char *argv[])
         exit(0);    
     }
     init_stack_a(&stack_a, argv + 1);
-    if(stack_sorted(stack_a))
+    if(!stack_sorted(stack_a))
     {
-        ft_printf("ok");
+        ft_printf("not sorted");
+
     }
-    free(&stack_a);
-    ft_printf("\n", argv[1]);
+    else
+        ft_printf("it's sorted");
+    ft_printf("\n");
 }

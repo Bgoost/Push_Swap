@@ -29,7 +29,3 @@ void ss(t_node **stack_a, t_node **stack_b)
     swap(stack_b);
     ft_printf("ss\n");
 }
-void pa(t_node *stack_a, t_node *stack_b)
-{
-    
-}

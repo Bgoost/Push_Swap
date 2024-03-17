@@ -4,7 +4,7 @@ static long ft_atol(const char *s)
     int sign;
     int num;
 
-    sign = 0;
+    sign = 1;
     num = 0;
 	while (*s == ' ' || *s == '\t' || *s == '\n' || \
 			*s == '\r' || *s == '\f' || *s == '\v')
