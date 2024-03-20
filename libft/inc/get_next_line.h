@@ -24,8 +24,6 @@
 # include "libft.h"
 
 char	*ft_strjoin_gnl(char *s1, char *s2);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s1);
 char	*ft_substr_gnl(const char *s, unsigned int start, size_t len);
 char	*get_next_line(int fd);
 char	*free_all(char **storage);

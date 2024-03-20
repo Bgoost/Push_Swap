@@ -56,7 +56,7 @@ static char	*get_storage(int fd, char *storage)
 		if (num_bytes > 0)
 		{
 			buffer[num_bytes] = '\0';
-			storage = ft_strjoin(storage, buffer);
+			storage = ft_strjoin_gnl(storage, buffer);
 		}
 	}
 	free(buffer);
