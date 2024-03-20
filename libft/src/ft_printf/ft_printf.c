@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/printf.h"
 
 static int	ft_type(const char *c, va_list ap)
 {
@@ -41,7 +41,7 @@ static int	ft_type(const char *c, va_list ap)
 		return (i);
 }
 
-int	process_specifiers(const char *str, va_list ap)
+static int	process_specifiers(const char *str, va_list ap)
 {
 	int	tmp;
 	int	final;

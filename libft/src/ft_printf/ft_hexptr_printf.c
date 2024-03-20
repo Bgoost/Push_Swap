@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/printf.h"
 
 static int	ft_hexptrlen(unsigned long n)
 {

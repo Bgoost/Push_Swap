@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unnbr_printf.c                                  :+:      :+:    :+:   */
+/*   ft_nbr_printf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crmanzan <crmanzan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:19:26 by crmanzan          #+#    #+#             */
-/*   Updated: 2024/01/23 13:11:28 by crmanzan         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:10:59 by crmanzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/printf.h"
 
 static int	check_write_char(char c)
 {
@@ -32,19 +32,35 @@ static int	write_digit(int n)
 	return (result);
 }
 
-unsigned int	ft_unnbr_printf(unsigned int n)
+int	max(void)
 {
-	unsigned int	len;
-	unsigned int	tmp;
+	if (write(1, "-2147483648", 11) == -1)
+		return (-1);
+	return (11);
+}
+
+int	ft_nbr_printf(int n)
+{
+	int	len;
+	int	result;
 
 	len = 0;
-	tmp = 0;
+	result = 0;
+	if (n == -2147483648)
+		return (max());
+	if (n < 0)
+	{
+		if (ft_char_printf('-') == -1)
+			return (-1);
+		n = -n;
+		len++;
+	}
 	if (n >= 10)
 	{
-		tmp = ft_unnbr_printf(n / 10);
-		if (tmp == (unsigned int)-1)
+		result = ft_nbr_printf(n / 10);
+		if (result == -1)
 			return (-1);
-		len += tmp;
+		len += result;
 	}
 	if (write_digit(n % 10) == -1)
 		return (-1);
@@ -53,7 +69,7 @@ unsigned int	ft_unnbr_printf(unsigned int n)
 /*
 int	main()
 {
-	printf("\n%u, %u, %u", printnbr2(10), printnbr2(123), -2);
-	printf("\n%u, %u, %u", 0, 123, -2);
+	printf("\n%i, %i, %i", printnbr(0), printnbr(123), printnbr(-2));
+	printf("\n%i, %i, %i", 0, 123, -2);
 	return (0);
 }*/

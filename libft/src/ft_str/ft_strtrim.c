@@ -17,9 +17,7 @@
 int	is_in(char const *set, char c)
 {
 	int	i;
-	int	n;
 
-	n = ft_strlen(set);
 	i = 0;
 	while (set[i] != '\0')
 	{

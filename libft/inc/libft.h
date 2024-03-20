@@ -54,12 +54,4 @@ size_t			ft_strlen(const char *s);
 size_t			ft_strlcat(char *dest, char *src, size_t size);
 size_t			ft_strlcpy(char *dest, char *src, size_t size);
 
-// PRINTF
-int				ft_printf(char const *str, ...);
-int				ft_char_printf(char c);
-int				ft_str_printf(char *str);
-int				ft_hexptr_printf(unsigned long hex, int shift, int mayus);
-int				ft_nbr_printf(int n);
-unsigned int	ft_unnbr_printf(unsigned int n);
-
 #endif

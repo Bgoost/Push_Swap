@@ -3,35 +3,39 @@ NAME				= push_swap
 
 # Directories
 LIBFT				= ./libft/libft.a
-# INC					= inc/
-SRC_DIR				= srcs/
+INC					= inc/
+SRC_DIR				= src/
+SRC_MAIN			= main_src/
+SRC_MOV				= movements/
 OBJ_DIR				= obj/
 
 # Compiler and CFlags
 CC					= gcc
-CFLAGS				= -Wall -Werror -Wextra -I
+CFLAGS				= -Wall -Werror -Wextra -MMD -I
 RM					= rm -f
 
 # Source Files
 MOVEMENTS_DIR		=	$(SRC_DIR)movements/swap.c \
-						$(SRC_DIR)movements/rev_rotate.c \
+						$(SRC_DIR)movements/reverse_rotate.c \
 						$(SRC_DIR)movements/rotate.c \
 						$(SRC_DIR)movements/push.c \
-						$(SRC_DIR)movements/sort_stacks.c \
-						$(SRC_DIR)movements/sort_three.c \
+						# $(SRC_DIR)$(SRC_MOV)sort_stacks.c \
 
-PUSH_SWAP_DIR		=	$(SRC_DIR)push_swap/handle_errors.c \
-						$(SRC_DIR)push_swap/init_a_to_b.c \
-						$(SRC_DIR)push_swap/init_b_to_a.c \
-						$(SRC_DIR)push_swap/push_swap.c \
-						$(SRC_DIR)push_swap/split.c \
-						$(SRC_DIR)push_swap/stack_init.c \
-						$(SRC_DIR)push_swap/stack_utils.c
+MAIN_DIR		=		$(SRC_DIR)main_src/stack_init.c \
+						$(SRC_DIR)main_src/push_swap.c \
+						$(SRC_DIR)main_src/stack_utils.c \
+						$(SRC_DIR)main_src/three_sort.c \
+
+# 						$(SRC_DIR)$(SRC_MAIN)init_a_to_b.c \
+# 						$(SRC_DIR)$(SRC_MAIN)init_b_to_a.c \
+# 						$(SRC_DIR)$(SRC_MAIN)split.c \
+# 						$(SRC_DIR)$(SRC_MAIN)stack_init.c \
+# 						$(SRC_DIR)$(SRC_MAIN)handle_errors.c \
 
 # Concatenate all source files
-SRCS 				= $(MOVEMENTS_DIR) $(PUSH_SWAP_DIR)
+SRC 				= $(MOVEMENTS_DIR) $(MAIN_DIR)
 
-OBJ = $(SRC:.c=.o)
+OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
 DEP = $(SRC:.c=.d)
 
@@ -50,7 +54,7 @@ $(NAME): 			$(OBJ) $(LIBFT)
 # Compile object files from source files
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
 					@mkdir -p $(@D)
-					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+					@$(CC) $(CFLAGS) $(INC)-c $< -o $@
 
 clean:
 					@$(RM) -r $(OBJ_DIR)
