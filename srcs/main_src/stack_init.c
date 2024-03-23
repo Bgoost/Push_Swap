@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*																			  */
+/*														  :::	   ::::::::   */
+/*	 stack_init.c										:+:		 :+:	:+:   */
+/*													  +:+ +:+		  +:+	  */
+/*	 By: crmanzan <crmanzan@student.42barcel>		+#+  +:+	   +#+		  */
+/*												  +#+#+#+#+#+	+#+			  */
+/*	 Created: 2024/03/23 17:11:59 by crmanzan		   #+#	  #+#			  */
+/*	 Updated: 2024/03/23 17:11:59 by crmanzan		  ###	########.fr		  */
+/*																			  */
+/* ************************************************************************** */
 #include "../../inc/push_swap.h"
-static long ft_atol(const char *s)
-{
-    int sign;
-    int num;
 
-    sign = 1;
-    num = 0;
+static long	ft_atol(const char *s)
+{
+	int	sign;
+	int	num;
+
+	sign = 1;
+	num = 0;
 	while (*s == ' ' || *s == '\t' || *s == '\n' || \
 			*s == '\r' || *s == '\f' || *s == '\v')
 		s++;
@@ -20,41 +32,41 @@ static long ft_atol(const char *s)
 	return (num * sign);
 }
 
-static void append_node(t_node **stack, int n)
+static void	append_node(t_node **stack, int n)
 {
-    t_node *node;
-    t_node *last_node;
+	t_node	*node;
+	t_node	*last_node;
 
-    if(!stack)
-        return ;
-    node = malloc(sizeof(t_node));
-    if (!node)
-        return ;
-    node->next = NULL;
-    node->number = n;
-    if(!(*stack))
-    {
-        *stack = node;
-        node->prev = NULL;
-    }
-    else
-    {
-        last_node = find_last(*stack); //which node is the last one
-        last_node->next = node;
-        node->prev = last_node;
-    }
+	if (!stack)
+		return ;
+	node = malloc(sizeof(t_node));
+	if (!node)
+		return ;
+	node->next = NULL;
+	node->number = n;
+	if (!(*stack))
+	{
+		*stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_last(*stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
 }
 
-void init_stack_a(t_node **stack_a, char **argv)
+void	init_stack_a(t_node **stack_a, char **argv)
 {
-    long n;
-    int i;
+	long	n;
+	int		i;
 
-    i = 0;
-    while(argv[i])
-    {
-        n = ft_atol(argv[i]);
-        append_node(stack_a, (int)n);
-        i++;
-    }
+	i = 0;
+	while (argv[i])
+	{
+		n = ft_atol(argv[i]);
+		append_node(stack_a, (int)n);
+		i++;
+	}
 }
