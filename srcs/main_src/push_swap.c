@@ -35,8 +35,8 @@ int	main(int argc, char *argv[])
 			sa(&stack_a);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
-		ft_printf("%d, %d, %d\n", stack_a->number, stack_a->next->number,
-			stack_a->next->next->number);
+		else
+			sort_all(&stack_a, &stack_b);
 		ft_printf("IT'S NOW SORTED\n");
 	}
 	else
