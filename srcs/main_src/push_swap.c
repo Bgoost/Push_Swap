@@ -22,11 +22,8 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc == 1)
 		return (1);
-	if (!argv[1][i])
-	{
-		write(2, "Error", 5);
-		return (1);
-	}
+	if(not_number(argv) || is_dup(argv) || error_int(argv))
+		print_error();
 	init_stack_a(&stack_a, argv + 1);
 	if (!stack_sorted(stack_a))
 	{

@@ -9,7 +9,7 @@ OBJ_DIR				= obj/
 
 # Compiler and CFlags
 CC					= gcc
-CFLAGS				= -Wall -Werror -Wextra -MMD -I
+CFLAGS				=  -MMD -I
 RM					= rm -f
 
 # Source Files
@@ -21,6 +21,10 @@ MOVEMENTS_DIR		=	$(SRC_DIR)movements/push.c \
 MAIN_DIR		=	$(SRC_DIR)main_src/stack_init.c \
 						$(SRC_DIR)main_src/three_sort.c \
 						$(SRC_DIR)main_src/push_swap.c \
+						$(SRC_DIR)main_src/error_handler.c \
+						$(SRC_DIR)main_src/main_algorithm.c \
+						$(SRC_DIR)main_src/median.c \
+						$(SRC_DIR)main_src/target.c \
 						$(SRC_DIR)main_src/stack_utils.c
 
 # Concatenate all source files

@@ -12,21 +12,21 @@
 #include "../../inc/push_swap.h"
 
 // QUE HAGO CON LA MEDIANA? AL PASAR DE STACK A AL STACK B, MIRO SI EL NUMERO ES MAYOR O MENOR A LA MEDIANA, DEPENDIENDO DE ESTO LO PONGO AL INICIO O AL FINAL DEL STACK B
-int	*make_array_num(t_node *stack)
+int	**make_array_num(t_node *stack)
 {
 	int	len;
-	int	*array;
+	int	**array;
 	int	i;
 
 	i = 0;
 	len = stack_len(stack);
-	array = (int *)malloc((len + 1) * sizeof(int));
+	array = malloc((len + 1) * sizeof(*array));
 	if (!array)
-		return (NULL);
+		return (exit(1), NULL);
 	while (i < len)
 	{
-		array[i] = stack->number;
-		if (!array)
+		array[i] = ft_atol(stack->number);
+		if (!array[i])
 			return (free(array), NULL);
 		i++;
 		stack = stack->next;

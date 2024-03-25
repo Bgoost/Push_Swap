@@ -11,25 +11,31 @@
 /* ************************************************************************** */
 #include "../../inc/push_swap.h"
 
-static long	ft_atol(const char *s)
+long	ft_atol(char *str)
 {
-	int	sign;
-	int	num;
+	int		i;
+	long	result;
+	long	sign;
 
+	i = 0;
+	result = 0;
 	sign = 1;
-	num = 0;
-	while (*s == ' ' || *s == '\t' || *s == '\n' || \
-			*s == '\r' || *s == '\f' || *s == '\v')
-		s++;
-	if (*s == '-' || *s == '+')
+	while (str[i] == '\f' || str[i] == '\n' || str[i] == '\r' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
 	{
-		if (*s == '-')
-			sign = -1;
-		s++;
+		sign = -1;
+		i++;
 	}
-	while (ft_isdigit(*s))
-		num = num * 10 + (*s++ - '0');
-	return (num * sign);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
 
 static void	append_node(t_node **stack, int n)
