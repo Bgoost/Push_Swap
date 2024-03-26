@@ -13,6 +13,7 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
+# include <stdio.h>
 # include "../libft/inc/libft.h"
 # include "../libft/inc/printf.h"
 
@@ -39,7 +40,7 @@ long	ft_atol(char *s);
 int		stack_len(t_node *stack);
 int		stack_sorted(t_node *stack);
 void	sort_three(t_node **stack_a);
-int		**make_array_num(t_node *stack);
+int	*make_array_num(t_node *stack);
 int		find_median(int *array, int len, int median);
 void	sort_all(t_node **stack_a, t_node **stack_b);
 
