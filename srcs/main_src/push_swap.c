@@ -38,5 +38,11 @@ int	main(int argc, char *argv[])
 	}
 	else
 		ft_printf("it's sorted");
+	//Print the stack
+	while(stack_a)
+	{
+		printf("%d ", stack_a->number);
+		stack_a = stack_a->next;
+	}
 	ft_printf("\n");
 }

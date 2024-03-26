@@ -22,9 +22,8 @@ typedef struct s_node
 	int				number;
 	int				index;
 	int				push_cost;
-	int				above_median;
 	int				cheapest;
-	struct s_node	*target_node;
+	struct s_node	*target;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -35,6 +34,7 @@ int is_dup(char **argv);
 void	print_error(void);
 t_node	*find_last(t_node *stack);
 t_node	*find_max(t_node *stack);
+t_node	*find_min(t_node **stack);
 void	init_stack_a(t_node **stack_a, char **argv);
 long	ft_atol(char *s);
 int		stack_len(t_node *stack);
@@ -43,6 +43,7 @@ void	sort_three(t_node **stack_a);
 int	*make_array_num(t_node *stack);
 int		find_median(int *array, int len, int median);
 void	sort_all(t_node **stack_a, t_node **stack_b);
+void find_target(t_node *stack_a, t_node *stack_b);
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);

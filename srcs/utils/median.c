@@ -35,7 +35,7 @@ int	*make_array_num(t_node *stack)
 	return (array);
 }
 
-int	find_min(int *array, int len)
+static int	find_min_median(int *array, int len)
 {
 	int	i;
 	int	min;
@@ -63,7 +63,7 @@ int	find_median(int *array, int len, int median)
 		median = (median + 1) / 2;
 	while (median--)
 	{
-		min = find_min(array, len);
+		min = find_min_median(array, len);
 		i = 0;
 		while (i < len)
 		{

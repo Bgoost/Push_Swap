@@ -18,17 +18,18 @@ MOVEMENTS_DIR		=	$(SRC_DIR)movements/push.c \
 						$(SRC_DIR)movements/rotate.c \
 						$(SRC_DIR)movements/swap.c
 
-MAIN_DIR		=	$(SRC_DIR)main_src/stack_init.c \
+MAIN_DIR			=	$(SRC_DIR)main_src/stack_init.c \
 						$(SRC_DIR)main_src/three_sort.c \
 						$(SRC_DIR)main_src/push_swap.c \
 						$(SRC_DIR)main_src/error_handler.c \
 						$(SRC_DIR)main_src/main_algorithm.c \
-						$(SRC_DIR)main_src/median.c \
-						$(SRC_DIR)main_src/target.c \
-						$(SRC_DIR)main_src/stack_utils.c
+
+UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c\
+						$(SRC_DIR)utils/target.c \
+						$(SRC_DIR)utils/median.c \
 
 # Concatenate all source files
-SRCS 				= $(MOVEMENTS_DIR) $(MAIN_DIR)
+SRCS 				= $(MOVEMENTS_DIR) $(MAIN_DIR) $(UTILS_DIR)
 
 # Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))

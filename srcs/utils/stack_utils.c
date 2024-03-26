@@ -55,6 +55,26 @@ t_node	*find_max(t_node *stack)
 	return (max_node);
 }
 
+t_node	*find_min(t_node **stack)
+{
+	t_node	*min;
+	t_node	*tmp;
+
+	tmp = *stack;
+	min = *stack;
+	if (!stack)
+		return (NULL);
+	while (tmp)
+	{
+		if (tmp->number < min->number)
+		{
+			min = tmp;
+		}
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
 int	stack_sorted(t_node *stack)
 {
 	while (stack->next)

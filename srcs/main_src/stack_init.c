@@ -38,7 +38,7 @@ long	ft_atol(char *str)
 	return (result * sign);
 }
 
-static void	append_node(t_node **stack, int n)
+static void	append_node(t_node **stack, int n, int index)
 {
 	t_node	*node;
 	t_node	*last_node;
@@ -50,6 +50,8 @@ static void	append_node(t_node **stack, int n)
 		return ;
 	node->next = NULL;
 	node->number = n;
+	node->index = index;
+	
 	if (!(*stack))
 	{
 		*stack = node;
@@ -72,7 +74,8 @@ void	init_stack_a(t_node **stack_a, char **argv)
 	while (argv[i])
 	{
 		n = ft_atol(argv[i]);
-		append_node(stack_a, (int)n);
+		append_node(stack_a, n, i);
+		
 		i++;
 	}
 }
