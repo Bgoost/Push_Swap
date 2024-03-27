@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	if (argc == 1)
 		return (1);
-	if(not_number(argv) || is_dup(argv) || error_int(argv))
+	if (not_number(argv) || is_dup(argv) || error_int(argv))
 		print_error();
 	init_stack_a(&stack_a, argv + 1);
 	if (!stack_sorted(stack_a))
@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 	else
 		ft_printf("it's sorted");
 	//Print the stack
-	while(stack_a)
+	while (stack_a)
 	{
 		printf("%d ", stack_a->number);
 		stack_a = stack_a->next;

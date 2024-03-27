@@ -17,7 +17,7 @@ void	print_error(void)
 	exit(1);
 }
 
-int is_dup(char **argv)
+int	is_dup(char **argv)
 {
 	int	i;
 	int	j;

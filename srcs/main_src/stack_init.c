@@ -51,7 +51,6 @@ static void	append_node(t_node **stack, int n, int index)
 	node->next = NULL;
 	node->number = n;
 	node->index = index;
-	
 	if (!(*stack))
 	{
 		*stack = node;
@@ -75,7 +74,6 @@ void	init_stack_a(t_node **stack_a, char **argv)
 	{
 		n = ft_atol(argv[i]);
 		append_node(stack_a, n, i);
-		
 		i++;
 	}
 }
