@@ -21,7 +21,7 @@ typedef struct s_node
 {
 	int				number;
 	int				index;
-	int				push_cost;
+	int				single_cost;
 	int				cheapest;
 	struct s_node	*target;
 	struct s_node	*next;
@@ -44,6 +44,8 @@ int	*make_array_num(t_node *stack);
 int		find_median(int *array, int len, int median);
 void	sort_all(t_node **stack_a, t_node **stack_b);
 void find_target(t_node *stack_a, t_node *stack_b);
+void update_index(t_node *stack_a, t_node *stack_b);
+void rate_single_cost(t_node *stack);
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);

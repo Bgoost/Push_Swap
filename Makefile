@@ -27,6 +27,7 @@ MAIN_DIR			=	$(SRC_DIR)main_src/stack_init.c \
 UTILS_DIR			=	$(SRC_DIR)utils/stack_utils.c\
 						$(SRC_DIR)utils/target.c \
 						$(SRC_DIR)utils/median.c \
+						$(SRC_DIR)utils/algorithm_utils.c 
 
 # Concatenate all source files
 SRCS 				= $(MOVEMENTS_DIR) $(MAIN_DIR) $(UTILS_DIR)

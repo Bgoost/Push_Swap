@@ -2,6 +2,7 @@
 
 // QUE HAGO CON EL TARGET.
 // MOVIMIENTOS FINALES, PASAR DE STACK B AL STACK A, BUSCAR SU MAXIMO MAS PROXIMO, Y SI NO HAY, BUSCAR EL MINIMO ABSOLUTO
+
 t_node *find_closest_bigger(t_node *stack_a, t_node *stack_b)
 {
     t_node *closest_bigger;
