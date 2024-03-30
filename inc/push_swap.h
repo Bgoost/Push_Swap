@@ -22,7 +22,7 @@ typedef struct s_node
 	int				number;
 	int				index;
 	int				single_cost;
-	int				cheapest;
+	int				push_cost;
 	struct s_node	*target;
 	struct s_node	*next;
 	struct s_node	*prev;
@@ -46,6 +46,7 @@ void	sort_all(t_node **stack_a, t_node **stack_b);
 void	find_target(t_node *stack_a, t_node *stack_b);
 void	update_index(t_node *stack_a, t_node *stack_b);
 void	rate_single_cost(t_node *stack);
+void	rate_both_cost(t_node *stack);
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);

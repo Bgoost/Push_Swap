@@ -49,3 +49,16 @@ void	rate_single_cost(t_node *stack)
 		stack = stack->next;
 	}
 }
+
+void rate_both_cost(t_node *stack)
+{
+	int total;
+
+	while (stack)
+	{
+		total = 0;
+		total = stack->single_cost + stack->target->single_cost;
+		stack->push_cost = total;
+		stack = stack->next;
+	}
+}

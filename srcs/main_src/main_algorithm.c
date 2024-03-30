@@ -19,8 +19,11 @@ static void	move_to_a(t_node **stack_a, t_node **stack_b)
 	{
 		find_target(*stack_a, *stack_b);
 		update_index(*stack_a, *stack_b);
+		printf("--- stack a ----\n");
 		rate_single_cost(*stack_a);
+		printf("--- stack b ----\n");
 		rate_single_cost(*stack_b);
+		
 		// coste total = coste base (el coste del propio item) + coste target (el coste del target)
 		printf("NUMERO: %d, INDICE: %d, PUSH_COST: %d\n", (*stack_a)->number, (*stack_a)->index, (*stack_a)->single_cost);
 		pa(stack_a, stack_b);
