@@ -11,7 +11,7 @@ OBJ_DIR				= obj/
 CC					= gcc
 CFLAGS				=  -MMD -I
 RM					= rm -f
-
+# -fsanitize=address 
 # Source Files
 MOVEMENTS_DIR		=	$(SRC_DIR)movements/push.c \
 						$(SRC_DIR)movements/reverse_rotate.c \
