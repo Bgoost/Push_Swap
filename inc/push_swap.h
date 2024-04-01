@@ -47,6 +47,9 @@ void	find_target(t_node *stack_a, t_node *stack_b);
 void	update_index(t_node *stack_a, t_node *stack_b);
 void	rate_single_cost(t_node *stack);
 void	rate_both_cost(t_node *stack);
+t_node	*min_push_cost(t_node *stack);
+t_node	*rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc);
+
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);

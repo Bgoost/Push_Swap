@@ -45,7 +45,7 @@ void	rate_single_cost(t_node *stack)
 			stack->single_cost = stack->index;
 		else
 			stack->single_cost = len - stack->index;
-		printf("Cost: %d\n", stack->single_cost);
+		
 		stack = stack->next;
 	}
 }
@@ -59,6 +59,29 @@ void rate_both_cost(t_node *stack)
 		total = 0;
 		total = stack->single_cost + stack->target->single_cost;
 		stack->push_cost = total;
+		printf("Cost: %d\n", stack->push_cost);
 		stack = stack->next;
 	}
+}
+t_node *min_push_cost(t_node *stack)
+{
+	t_node	*min;
+
+	min = stack;
+	while(stack)
+	{
+		if(stack->push_cost < min->push_cost)
+			min = stack;
+		stack = stack->next;
+	}
+	return (min);
+}
+
+t_node *rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
+{
+	int	mid_a;
+	int	mid_b;
+
+	mid_a = stack_len(*stack_a) / 2;
+	mid_b = stack_len(*stack_b) / 2;
 }

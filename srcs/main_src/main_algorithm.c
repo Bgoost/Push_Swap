@@ -13,7 +13,7 @@
 
 static void	move_to_a(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*push_cost;
+	t_node	*min_pc;
 
 	while (*stack_b)
 	{
@@ -23,9 +23,12 @@ static void	move_to_a(t_node **stack_a, t_node **stack_b)
 		rate_single_cost(*stack_a);
 		printf("--- stack b ----\n");
 		rate_single_cost(*stack_b);
-		
+		rate_both_cost(*stack_b);
+		min_pc = min_push_cost(*stack_b);
+		if(min_pc->index != 0 && min_pc->target->index != 0)
+			rrr_or_rr(stack_a, stack_b, min_pc);
 		// coste total = coste base (el coste del propio item) + coste target (el coste del target)
-		printf("NUMERO: %d, INDICE: %d, PUSH_COST: %d\n", (*stack_a)->number, (*stack_a)->index, (*stack_a)->single_cost);
+		printf("NUMERO: %d, INDICE: %d, PUSH_COST: %d\n", (*stack_a)->number, (*stack_b)->index, (*stack_a)->push_cost);
 		pa(stack_a, stack_b);
 	}
 }
