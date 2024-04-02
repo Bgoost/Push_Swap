@@ -27,22 +27,12 @@ int	main(int argc, char *argv[])
 	init_stack_a(&stack_a, argv + 1);
 	if (!stack_sorted(stack_a))
 	{
-		ft_printf("not sorted\n");
 		if (stack_len(stack_a) == 2)
 			sa(&stack_a);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
 		else
 			sort_all(&stack_a, &stack_b);
-		ft_printf("IT'S NOW SORTED\n");
 	}
-	else
-		ft_printf("it's sorted");
-	//Print the stack
-	while (stack_a)
-	{
-		printf("%d ", stack_a->number);
-		stack_a = stack_a->next;
-	}
-	ft_printf("\n");
+	clear_stack(&stack_a);
 }

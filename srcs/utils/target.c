@@ -39,6 +39,5 @@ void	find_target(t_node *stack_a, t_node *stack_b)
 		stack_b->target = find_min(&stack_a);
 	else
 		stack_b->target = closest_bigger;
-	printf("NUMBER: %d, TARGET: %d, INDEX: %d\n", stack_b->number, stack_b->target->number, stack_b->index);
 	find_target(stack_a, stack_b->next);
 }

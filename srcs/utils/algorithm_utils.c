@@ -51,7 +51,6 @@ void rate_both_cost(t_node *stack)
 		total = 0;
 		total = stack->single_cost + stack->target->single_cost;
 		stack->push_cost = total;
-		printf("Cost: %d\n", stack->push_cost);
 		stack = stack->next;
 	}
 }
