@@ -11,24 +11,16 @@
 /* ************************************************************************** */
 #include "../../inc/push_swap.h"
 
-void	update_index(t_node *stack_a, t_node *stack_b)
+void	update_index(t_node *stack)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (stack_a)
+	while (stack)
 	{
-		stack_a->index = i;
+		stack->index = i;
 		i++;
-		stack_a = stack_a->next;
-	}
-	while (stack_b)
-	{
-		stack_b->index = j;
-		j++;
-		stack_b = stack_b->next;
+		stack = stack->next;
 	}
 }
 
@@ -84,4 +76,8 @@ t_node *rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
 
 	mid_a = stack_len(*stack_a) / 2;
 	mid_b = stack_len(*stack_b) / 2;
+	if(min_pc->index > mid_b && min_pc->target->index > mid_a)
+		rrr(stack_a, stack_b);
+	else if(min_pc->index < mid_b && min_pc->target->index < mid_a)
+		rr(stack_a, stack_b);
 }
