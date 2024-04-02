@@ -15,11 +15,9 @@ int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	int		i;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	i = 0;
 	if (argc == 1)
 		return (1);
 	if (not_number(argv) || is_dup(argv) || error_int(argv))

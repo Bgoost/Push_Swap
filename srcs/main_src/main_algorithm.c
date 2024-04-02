@@ -81,7 +81,7 @@ void	sort_all(t_node **stack_a, t_node **stack_b)
 
 	array = make_array_num(*stack_a);
 	median = find_median(array, stack_len(*stack_a), stack_len(*stack_a));
-	free_array(array);
+	//free_array(array);
 	while (stack_len(*stack_a) > 3)
 	{
 		pb(stack_a, stack_b);

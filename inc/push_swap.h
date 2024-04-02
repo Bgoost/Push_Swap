@@ -50,8 +50,8 @@ void	rate_both_cost(t_node *stack);
 t_node	*min_push_cost(t_node *stack);
 t_node	*last_move(t_node **stack_a, t_node **stack_b, t_node *min_pc);
 t_node	*rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc);
-void clear_stack(t_node **stack_a);
-void free_array(int *array);
+ void clear_stack(t_node **stack_a);
+ void free_array(int *array);
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);
