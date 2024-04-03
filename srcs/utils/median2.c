@@ -23,12 +23,18 @@ int	*make_array_num(t_node *stack)
 	array = malloc((len + 1) * sizeof(*array));
 	if (!array)
 		return (exit(1), NULL);
-	while (i < len && stack)
+	while (i < len)
 	{
 		array[i] = stack->number;
+		if (!array)
+        {
+            free(array);
+            return NULL;
+        }
 		i++;
 		stack = stack->next;
 	}
+	array[i] = '\0';
 	return (array);
 }
 

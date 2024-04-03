@@ -68,7 +68,7 @@ t_node *min_push_cost(t_node *stack)
 	return (min);
 }
 
-t_node *rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
+void rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
 {
 	int	mid_a;
 	int	mid_b;

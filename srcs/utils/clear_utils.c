@@ -23,5 +23,6 @@ void free_array(int *array)
     if(array != NULL)
 	{
 		free(array);
+        array = NULL;
 	}
 }
