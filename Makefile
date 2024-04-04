@@ -9,7 +9,7 @@ OBJ_DIR				= obj/
 
 # Compiler and CFlags
 CC					= gcc
-CFLAGS				= -fsanitize=address -Wall -Werror -Wextra -MMD -I
+CFLAGS				= -Wall -Werror -Wextra -MMD -I
 RM					= rm -f
 # -fsanitize=address 
 # Source Files

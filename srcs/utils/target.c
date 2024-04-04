@@ -20,6 +20,8 @@ t_node	*find_closest_bigger(t_node *stack_a, t_node *stack_b)
 	closest_bigger = NULL;
 	while (stack_a)
 	{
+		printf("%d\n", stack_a->number);
+		printf("%d\n", closest_bigger->number);
 		if (stack_a->number > stack_b->number && (!closest_bigger
 				|| stack_a->number < closest_bigger->number))
 			closest_bigger = stack_a;
@@ -35,6 +37,7 @@ void	find_target(t_node *stack_a, t_node *stack_b)
 	if (!stack_b)
 		return ;
 	closest_bigger = find_closest_bigger(stack_a, stack_b);
+	printf("%d", closest_bigger->number);
 	if (!closest_bigger)
 		stack_b->target = find_min(&stack_a);
 	else

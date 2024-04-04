@@ -51,7 +51,10 @@ int	not_number(char **argv)
 		if (!argv[i][j])
 			return (1);
 		if (argv[i][j] == '-' || argv[i][j] == '+')
-			j++;
+		{
+			if(argv[i][j + 1])
+				j++;
+		}
 		while (argv[i][j])
 		{
 			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))

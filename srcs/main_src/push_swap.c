@@ -32,11 +32,5 @@ int	main(int argc, char *argv[])
 		else
 			sort_all(&stack_a, &stack_b);
 	}
-	// while(stack_a)
-	// {
-	// 	printf("%d ", (stack_a)->number);
-	// 	stack_a = stack_a->next;
-	// }
 	clear_stack(&stack_a);
-
 }

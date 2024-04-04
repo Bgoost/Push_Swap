@@ -3,26 +3,25 @@
 void clear_stack(t_node **stack)
 {
     t_node *tmp;
-    t_node *next;
 
-    if(*stack)
+    if(stack)
     {
         tmp = *stack;
-        while(tmp)
+        while(stack)
         {
-            next = tmp->next;
+            *stack = (*stack)->next;
             free(tmp);
-            tmp = next;
+            tmp = (*stack);
         }
-        *stack = NULL;
     }
+    *stack = NULL;
 }
 
 void free_array(int *array)
 {
     if(array != NULL)
-	{
-		free(array);
+    {
+        free(array);
         array = NULL;
-	}
+    }
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crmanzan <crmanzan@student.42barcel>       +#+  +:+       +#+        */
+/*   By: crmanzan <crmanzan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:28:02 by crmanzan          #+#    #+#             */
-/*   Updated: 2024/03/27 20:29:54 by crmanzan         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:07:44 by crmanzan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../../inc/push_swap.h"
 
+#include "../../inc/push_swap.h"
 static void finish_sort(t_node **stack_a)
 {
 	t_node *min;
@@ -81,7 +81,7 @@ void	sort_all(t_node **stack_a, t_node **stack_b)
 
 	array = make_array_num(*stack_a);
 	median = find_median(array, stack_len(*stack_a), stack_len(*stack_a));
-	//free(array);
+	free_array(array);
 	while (stack_len(*stack_a) > 3)
 	{
 		pb(stack_a, stack_b);
