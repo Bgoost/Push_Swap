@@ -52,7 +52,7 @@ int	not_number(char **argv)
 			return (1);
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 		{
-			if(argv[i][j + 1])
+			if (argv[i][j + 1])
 				j++;
 		}
 		while (argv[i][j])

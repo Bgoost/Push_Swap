@@ -60,10 +60,10 @@ t_node	*find_min(t_node **stack)
 	t_node	*min;
 	t_node	*tmp;
 
-	tmp = *stack;
-	min = *stack;
 	if (!stack)
 		return (NULL);
+	tmp = *stack;
+	min = *stack;
 	while (tmp)
 	{
 		if (tmp->number < min->number)

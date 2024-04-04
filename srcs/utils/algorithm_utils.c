@@ -37,14 +37,13 @@ void	rate_single_cost(t_node *stack)
 			stack->single_cost = stack->index;
 		else
 			stack->single_cost = len - stack->index;
-		
 		stack = stack->next;
 	}
 }
 
-void rate_both_cost(t_node *stack)
+void	rate_both_cost(t_node *stack)
 {
-	int total;
+	int	total;
 
 	while (stack)
 	{
@@ -54,29 +53,30 @@ void rate_both_cost(t_node *stack)
 		stack = stack->next;
 	}
 }
-t_node *min_push_cost(t_node *stack)
+
+t_node	*min_push_cost(t_node *stack)
 {
 	t_node	*min;
 
 	min = stack;
-	while(stack)
+	while (stack)
 	{
-		if(stack->push_cost < min->push_cost)
+		if (stack->push_cost < min->push_cost)
 			min = stack;
 		stack = stack->next;
 	}
 	return (min);
 }
 
-void rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
+void	rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc)
 {
 	int	mid_a;
 	int	mid_b;
 
 	mid_a = stack_len(*stack_a) / 2;
 	mid_b = stack_len(*stack_b) / 2;
-	if(min_pc->index > mid_b && min_pc->target->index > mid_a)
+	if (min_pc->index > mid_b && min_pc->target->index > mid_a)
 		rrr(stack_a, stack_b);
-	else if(min_pc->index < mid_b && min_pc->target->index < mid_a)
+	else if (min_pc->index < mid_b && min_pc->target->index < mid_a)
 		rr(stack_a, stack_b);
 }

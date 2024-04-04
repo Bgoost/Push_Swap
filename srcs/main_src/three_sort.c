@@ -23,3 +23,18 @@ void	sort_three(t_node **stack_a)
 	if ((*stack_a)->number > (*stack_a)->next->number)
 		sa(stack_a);
 }
+
+void	sort_five(t_node **stack_a, t_node **stack_b)
+{
+	if ((*stack_a)->number > (*stack_a)->next->number)
+		sa(stack_a);
+	while (stack_len(*stack_a) > 3)
+	{
+		pb(stack_a, stack_b);
+	}
+	if (!(stack_sorted((*stack_a))))
+		sort_three(stack_a);
+	move_to_a(stack_a, stack_b);
+	update_index(*stack_a);
+	finish_sort(stack_a);
+}

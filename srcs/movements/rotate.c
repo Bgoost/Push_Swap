@@ -9,6 +9,7 @@
 /*	 Updated: 2024/03/23 16:57:59 by crmanzan		  ###	########.fr		  */
 /*																			  */
 /* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 static void	rotate(t_node **stack)
@@ -24,6 +25,21 @@ static void	rotate(t_node **stack)
 	tmp->next = NULL;
 	last_node->next = tmp;
 }
+// static void	rotate(t_node **stack)
+// {
+// 	t_node	*first_node;
+// 	t_node	*last_node;
+
+// 	if (!*stack || !(*stack)->next)
+// 		return ;
+// 	last_node = find_last(*stack);
+// 	first_node = *stack;
+// 	last_node->next = *stack;
+// 	last_node->prev->next = NULL;
+// 	first_node->prev = last_node;
+// 	*stack = (*stack)->prev;
+// 	(*stack)->prev = NULL;
+// }
 
 void	ra(t_node **stack_a)
 {
