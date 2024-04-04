@@ -3,7 +3,7 @@ NAME				= push_swap
 
 # Directories
 LIBFT				= ./libft/libft.a
-INC					= inc/
+INC					= inc/push_swap.h
 SRC_DIR				= srcs/
 OBJ_DIR				= obj/
 
@@ -45,11 +45,11 @@ $(LIBFT):
 
 all: 				$(NAME)
 
-$(NAME): 			$(OBJ) $(LIBFT)
+$(NAME): 			$(OBJ) $(LIBFT) $(INC)
 					$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
 # Compile object files from source files
-$(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
+$(OBJ_DIR)%.o:		$(SRC_DIR)%.c Makefile $(INC)
 					@mkdir -p $(@D)
 					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
