@@ -41,6 +41,7 @@ long	ft_atol(char *s);
 int		stack_len(t_node *stack);
 int		stack_sorted(t_node *stack);
 void	sort_three(t_node **stack_a);
+void	sort_five(t_node **stack_a, t_node **stack_b);
 int		*make_array_num(t_node *stack);
 int		find_median(int *array, int len, int median);
 void	sort_all(t_node **stack_a, t_node **stack_b);
@@ -50,8 +51,10 @@ void	rate_single_cost(t_node *stack);
 void	rate_both_cost(t_node *stack);
 t_node	*min_push_cost(t_node *stack);
 void	rrr_or_rr(t_node **stack_a, t_node **stack_b, t_node *min_pc);
-void clear_stack(t_node **stack_a);
-void free_array(int *array);
+void	clear_stack(t_node **stack_a);
+void	free_array(int *array);
+void	move_to_a(t_node **stack_a, t_node **stack_b);
+void	finish_sort(t_node **stack_a);
 
 // Movements
 void	pa(t_node **stack_a, t_node **stack_b);
